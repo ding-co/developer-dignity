@@ -9,7 +9,6 @@
 ### [Note]
 
 - MS에서 관리, 가장 많이 사용하는 text editor
--
 
 #
 
