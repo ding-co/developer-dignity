@@ -1,0 +1,11 @@
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: green;
+}
+
+ul > li:nth-child(2n + 1) {
+  color: blue;
+}

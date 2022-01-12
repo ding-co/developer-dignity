@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 선택자 selector */
+      /* 선언 블록 declaration block */
+      /* property, property value */
+
+      .p-area {
+        background-color: red;
+      }
+
+      p {
+        color: red;
+        padding: 10px;
+        background-color: black !important;
+      }
+
+      /* 별표(*) 선택자를 전체 선택자, universal selector 라고 함*/
+
+      .div-area {
+        background-color: red;
+        /* color: white; */
+        width: 100%;
+        height: 50px;
+      }
+
+      .primary {
+        padding: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background-color: blue;
+        border-color: blue;
+      }
+
+      .text-white {
+        color: white;
+      }
+
+      .bg-blue {
+        background-color: blue;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .p-5 {
+        padding: 5px;
+      }
+
+      #header {
+        color: saddlebrown;
+      }
+
+      #header > .div-area {
+        background-color: violet;
+      }
+      input[type='text'] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CSS - Cascading Style Sheets -->
+    <input type="text" name="" id="" />
+    <div id="header">
+      <div class="div-area">ㅇ</div>
+      <div class="div-area">ㅁ</div>
+      <div class="div-area">ㄱ</div>
+      <p>p 영역</p>
+    </div>
+    <div class="div-area text-white">영역입니다.</div>
+    <p class="p-area">문장입니다.</p>
+    <p>문장입니다.</p>
+    <p>문장입니다.</p>
+    <p>문장입니다.</p>
+    <p>문장입니다.</p>
+    <button class="primary">저장</button>
+    <button class=""></button>
+  </body>
+</html>
