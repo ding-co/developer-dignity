@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dotted {
+        border-style: dotted;
+        border-width: 4px;
+      }
+      .dashed {
+        border-style: dashed;
+        border-width: 4px;
+      }
+      .double {
+        border-style: double;
+        border-width: 10px;
+        border-color: red blue;
+      }
+      .mix {
+        border-style: dotted dashed double solid;
+      }
+      button {
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="dotted">점선</p>
+    <p class="dashed">조금 긴 점선</p>
+    <p class="double">이중선</p>
+    <p class="mix">4개의 면의 선색이 다른 적용</p>
+    <button>저장</button>
+  </body>
+</html>
