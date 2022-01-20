@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let person2 = new Object();
+      let person1 = {
+        name: '홍길동',
+        age: 22,
+        tel: '010-0000-0000',
+        isAdult: true,
+        school: {},
+      };
+
+      let person2 = {
+        name: '유재석',
+        age: 22,
+        tel: '010-0000-0000',
+        isAdult: true,
+        school: {},
+      };
+
+      let name1 = person1.name;
+      let age1 = person1.age;
+      person1.age = 23;
+      // console.log(person1.age);
+
+      person1.addr = '서울시 강서구 동 번지';
+      // console.log(person1);
+
+      let name2 = person2['name'];
+      console.log(name2);
+    </script>
+  </body>
+</html>

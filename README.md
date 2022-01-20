@@ -13,6 +13,10 @@
 
 > - [x] [22_01_13_Thu - CSS 2](boot-camp/note/January/22_01_13_Thu.md)
 
+> - [x] [22_01_18_Tue - HTML&CSS 연습 + JS 1](boot-camp/note/January/22_01_18_Tue.md)
+
+> - [x] [22_01_20_Thu - JS 2](boot-camp/note/January/22_01_20_Thu.md)
+
 </details>
 
 ---
