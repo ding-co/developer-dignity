@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n1 = 3;
+      let n2 = 5;
+      let sum = n1 + n2;
+
+      let n3 = 3;
+      let n4 = 5;
+      let sum2 = n3 + n4;
+
+      // 더하기 함수
+      function plus(n1, n2) {
+        // let sum = n1 + n2;
+        return n1 + n2;
+      }
+
+      let sum3 = plus(12, 34);
+      console.log(sum3);
+      console.log(plus(5, 7));
+
+      // function add(n1, n2) {
+      //   return n1 + n2;
+      // }
+
+      function minus(n1, n2) {
+        return n1 - n2;
+      }
+
+      function multiply(n1, n2) {
+        return n1 * n2;
+      }
+
+      function divide(n1, n2) {
+        return n1 / n2;
+      }
+
+      function calculator(n1, n2, operator) {}
+
+      // 함수 표현식
+      const add = function (n1, n2) {
+        return n1 + n2;
+      };
+
+      console.log(add(5, 7));
+
+      // Function 생성자 함수
+      const add2 = new Function('n1', 'n2', 'return n1 + n2;');
+      const op = '+';
+      const calculator2 = new Function('n1', 'n2', 'return n1 ' + op + 'n2;');
+      console.log(calculator2(5, 88));
+    </script>
+  </body>
+</html>

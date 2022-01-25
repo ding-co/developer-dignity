@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String 객체
+      let txt = 'javascript';
+      const obj = {
+        fun1: function () {},
+        fun2: function () {},
+        indexOf: function (str) {},
+        length: 10,
+      };
+      console.log(txt.length);
+
+      // indexOf()
+      let str = 'Welcome to Jeju!';
+      console.log(str.indexOf('w'));
+
+      let tel = '010-0000-0000';
+      let tel2 = '01000000000';
+      if (tel2.indexOf('-') > -1) {
+      }
+
+      // lastIndexOf()
+      console.log(str.lastIndexOf('e'));
+
+      // slice()
+      console.log(str.slice(str.indexOf('Jeju'), 15));
+      console.log(str.slice(11));
+      console.log(str.slice(-5, -1));
+
+      let numberFormat = '$#,###.##';
+      let numberFormat2 = '$#,###';
+      let numberFormat3 = '$#.###,##';
+      let percentFormat = '#,###.##%';
+      // 한국; 3자리마다 쉼표 들어감
+      // 미국; 3자리마다 쉼표 들어가고 . 이용해서 소수점 표시
+      // 유럽; 3자리마다 . 들어감 (소수점은 , 이용)
+
+      let amount = 3123452;
+      let rate = 34.5;
+
+      if (percentFormat.slice(-1) === '%') {
+      }
+
+      // substring()
+      console.log(str.substring(11, 15));
+      // 상당히 복잡
+      console.log(
+        percentFormat.substring(percentFormat.length - 1, percentFormat.length)
+      );
+
+      // substr()
+      let date = '20220125';
+      let year = date.slice(0, 4); // date.substring(0, 4)
+      let month = date.slice(4, 6); // date.substring(4, 6)
+      let day = date.slice(6, 8); // date.substring(6, 8)
+
+      year = date.substr(0, 4);
+      month = date.substr(4, 2);
+      day = date.substr(6, 2);
+
+      console.log(year, month, day);
+
+      // replace()
+      str = 'Welcome Jeju! JEJU!';
+      console.log(str.replace('Jeju', 'Seoul'));
+
+      // 정규식
+      console.log(str.replace(/Jeju/gi, 'Seoul'));
+
+      // toUpperCase()
+      console.log(str.toUpperCase());
+
+      // toLowerCase()
+      console.log(str.toLowerCase());
+
+      // concat()
+      let txt1 = 'Hello';
+      let txt2 = 'World';
+      let txt3 = txt1 + ' ' + txt2;
+      let txt4 = txt1.concat(' ', txt2);
+      console.log(txt4);
+
+      // trim()
+      str = '          승원     '; // DB; 김승원, 강승원, ...
+      console.log(str);
+      console.log(str.trim());
+
+      let name = '고 승 원';
+      console.log(name.replace(/\s/g, ''));
+    </script>
+  </body>
+</html>
