@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // padStart(), padEnd()
+      let str = '5'; // 4자리
+      // 대학학번: 년도 2자리 + 학과번호 2자리 + 입력순서(이름 가나다순) 4자리 = 8자리
+      // 22031256
+
+      // console.log(str.padStart(4, '0'));
+
+      // while (str.length < 4) {
+      //   str = '0' + str;
+      // }
+      // console.log(str);
+
+      console.log(str.padEnd(4, '0'));
+
+      // charAt()
+      str = 'A0001';
+      console.log(str.charAt(0));
+      // str.substring(0, 1);
+      // str.substr(0, 1);
+      // str.slice(0, 1);
+
+      // charCodeAt()
+      console.log(str.charCodeAt(0));
+
+      // split()
+      let tags = '#개발자의품격#웹개발#부트캠프#자바스크립트';
+      let email = 'a@gmail.com,b@gmail.com,c@gmail.com,';
+      let emails = email.split(',');
+      console.log(emails);
+
+      let date = '2022-01-26';
+      date = date.split('-');
+      let year = date[0];
+      let month = date[1];
+      let day = date[2];
+      console.log(date);
+
+      // startsWith(), endsWith()
+      let url = 'https://website.com';
+      console.log(url.startsWith('https://'));
+
+      let file = 'abc.pdf';
+      console.log(file.endsWith('.pdf'));
+    </script>
+  </body>
+</html>

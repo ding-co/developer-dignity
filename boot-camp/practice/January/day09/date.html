@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="date" name="" id="" /><input type="date" name="" id="" />
+    <script>
+      // Date 객체
+
+      let now = new Date();
+      console.log(now);
+
+      console.log(now.getFullYear());
+      console.log(now.getMonth());
+      console.log(now.getTime());
+
+      let date = new Date('2022-02-25 03:20:10');
+      // let date = new Date(1643202648779);
+      console.log(date);
+
+      function getIntervalDate(day) {
+        let now = new Date();
+        let dayMilliseconds = 60 * 60 * 24 * 1000;
+
+        let intervalDate = now.getTime() + dayMilliseconds * day;
+        return new Date(intervalDate);
+      }
+
+      console.log(getIntervalDate(-7));
+
+      // YYYY-MM-DD
+      let year = now.getFullYear();
+      let month = now.getMonth() + 1;
+      // if (month < 10) month = '0' + month;
+      let day = now.getDate();
+      console.log(year + '-' + month.toString().padStart(2, '0') + '-' + day);
+    </script>
+  </body>
+</html>
