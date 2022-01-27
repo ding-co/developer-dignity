@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Math 객체
+      // round - 반올림처리
+      console.log(Math.round(4.9));
+      console.log(Math.round(4.4));
+
+      // ceil - 무조건 올림 처리
+      console.log(Math.ceil(4.2));
+
+      // 공지수 - 51, 한 페이지에 보여주는 공지수는 10건
+      // 페이징 처리: 1, 2, 3, 4, 5, 6
+      // 341, 10
+      let total = 341;
+      let countPerPage = 10;
+      let totalPage = Math.ceil(total / countPerPage);
+      console.log(totalPage);
+
+      // floor - 무조건 내림 처리
+      console.log(Math.floor(4.7));
+
+      // trunc - 소수점 이하는 무조건 버림
+      console.log(Math.trunc(4.2124124));
+
+      // sign
+      console.log(Math.sign(-124214));
+
+      // pow
+      console.log(Math.pow(2, 5));
+
+      // sqrt
+      console.log(Math.sqrt(32));
+
+      // abs
+      console.log(Math.abs(-124));
+
+      // min
+      console.log(Math.min(1, 12, 4, 124, 124, 121, 24));
+
+      // max
+      console.log(Math.max(1, 4, 5, 12, 124));
+
+      // random
+      console.log(Math.random());
+      // 0 ~ 9
+      console.log(Math.floor(Math.random() * 10));
+      // 1 ~ 10
+      console.log(Math.floor(Math.random() * 10) + 1);
+      // 1 ~ 100
+      console.log(Math.floor(Math.random() * 100) + 1);
+
+      function getRandomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    </script>
+  </body>
+</html>
