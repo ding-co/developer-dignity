@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getPerson() {
+        return {
+          firstName: 'John',
+          lastName: 'Doe',
+          age: 37,
+          email: 'john@gmail.com',
+          city: '',
+          country: '',
+          company: '',
+        };
+      }
+
+      let person = getPerson();
+      let { firstName, lastName } = getPerson();
+
+      console.log(firstName);
+      console.log(lastName);
+
+      // let firstName = getPerson()['firstName'];
+      // let lastName = getPerson()['lastName'];
+    </script>
+  </body>
+</html>

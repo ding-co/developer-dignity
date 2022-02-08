@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let name = '딩 딩 코';
+      // console.log(name.replace(/\s/g, ''));
+
+      String.prototype.replaceSpace = function () {
+        return this.replace(/\s/g, '');
+      };
+
+      console.log(name.replaceSpace());
+    </script>
+  </body>
+</html>

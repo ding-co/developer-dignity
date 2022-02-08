@@ -23,6 +23,8 @@
 
 > - [x] [22_01_27_Thu - JS 5](boot-camp/note/January/22_01_27_Thu.md)
 
+> - [x] [22_02_08_Tue - JS 6](boot-camp/note/January/22_02_08_Tue.md)
+
 </details>
 
 ---

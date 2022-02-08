@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        constructor(modelName, modelYear, type, price) {
+          this.modelName = modelName;
+          this.modelYear = modelYear;
+          this.type = type;
+          this.price = price;
+        }
+
+        getModelName() {
+          return this.modelName;
+        }
+
+        getPrice() {
+          return this.price;
+        }
+
+        setPrice(price) {
+          this.price = price;
+        }
+      }
+
+      class ElectricCar extends Car {
+        constructor(modelName, modelYear, type, price, chargeTime, distance) {
+          super(modelName, modelYear, type, price);
+          this.chargeTime = chargeTime;
+          this.distance = distance;
+        }
+
+        getChargeTime() {
+          return this.chargeTime;
+        }
+
+        getDistance() {
+          return this.distance;
+        }
+      }
+
+      let ionic = new ElectricCar('아이오닉', 2021, 'E', 4000, 120, 450);
+      console.log(ionic.getModelName());
+      console.log(ionic.getDistance());
+
+      // let ionic = new Car('아이오닉', 2021, 'E', 4000);
+      // console.log(ionic.getModelName());
+      // ionic.setPrice(4200);
+      // console.log(ionic.getPrice());
+
+      let genesis = new Car('제네시스', 2022, 'G', 7000);
+      console.log(genesis.getModelName());
+    </script>
+  </body>
+</html>

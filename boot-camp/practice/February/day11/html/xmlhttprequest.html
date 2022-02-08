@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="getData()">조회</button>
+    <button onClick="postData()">생성</button>
+    <button onClick="putData()">수정</button>
+    <button onClick="deleteData()">삭제</button>
+    <script>
+      function getData() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/posts');
+        xhr.setRequestHeader('content-type', 'application/json');
+        xhr.send();
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const res = JSON.parse(xhr.response);
+            console.log(res);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      }
+
+      function getData2(url) {
+        return new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', url);
+          xhr.setRequestHeader('content-type', 'application/json');
+          xhr.send();
+
+          xhr.onload = () => {
+            if (xhr.status === 200) {
+              const res = JSON.parse(xhr.response);
+              // console.log(res);
+              return resolve(res);
+            } else {
+              console.log(xhr.status, xhr.statusText);
+              reject(xhr.status);
+            }
+          };
+        });
+      }
+
+      getData2('http://localhost:3000/posts').then((res) => console.log(res));
+      getData2('http://localhost:3000/comments').then((res) =>
+        console.log(res)
+      );
+
+      // const promise = new Promise((resolve, reject) => {
+      //   resolve(성공된결과);
+      //   reject(실패한에러);
+      // });
+
+      function postData() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3000/posts');
+        xhr.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+        const data = {
+          title: 'xmlhttprequest',
+          author: 'John Doe',
+        };
+        xhr.send(JSON.stringify(data));
+
+        xhr.onload = () => {
+          if (xhr.status === 201) {
+            const res = JSON.parse(xhr.response);
+            console.log(res);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      }
+
+      function putData() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', 'http://localhost:3000/posts/2');
+        xhr.setRequestHeader('content-type', 'application/json;charset=UTF-8');
+        const data = {
+          title: 'javascript',
+          author: 'Jeremy',
+        };
+        xhr.send(JSON.stringify(data));
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const res = JSON.parse(xhr.response);
+            console.log(res);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      }
+
+      function deleteData() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('DELETE', 'http://localhost:3000/posts/2');
+        xhr.setRequestHeader('content-type', 'application/json');
+        xhr.send();
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const res = JSON.parse(xhr.response);
+            console.log(res);
+          } else {
+            console.log(xhr.status, xhr.statusText);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
