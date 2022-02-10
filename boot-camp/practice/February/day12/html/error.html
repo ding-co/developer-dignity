@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 에러 핸들링
+
+      // let n = 3;
+      // n.substring(0, 3); - TypeError
+      // console.lg('hi'); - TypeError
+      // console.log('hi' - SyntaxError
+      // num; - ReferenceError
+
+      // try {
+      //   console.log('아직 에러 없음');
+      //   // 기상청 날씨 정보 조회하는 API
+      //   getWeather(); // 에러 발생
+      //   console.log('에러 다음 코드');
+      // } catch (error) {
+      //   console.log(error);
+      // }
+
+      // console.log('try/catch 구문 밖의 코드');
+
+      // 에러 안잡힘
+      // try {
+      //   setTimeout(() => {
+      //     getWeather(); // 에러
+      //   }, 1000);
+      // } catch (error) {
+      //   console.log(error);
+      // }
+
+      // 에러 잡힘
+      // setTimeout(() => {
+      //   try {
+      //     getWeather();
+      //   } catch (error) {
+      //     console.log(error);
+      //   }
+      // }, 1000);
+
+      try {
+        getWeather();
+      } catch (error) {
+        console.log(error.name);
+        console.log(error.message);
+        // if (error.name === 'ReferenceError')
+        if (error instanceof ReferenceError) {
+        } else if (error instanceof TypeError) {
+        }
+        // else if (error instanceof SyntaxError) {
+        // }
+      } finally {
+        console.log('위의 코드 상관없이 나의 길을 가기');
+      }
+
+      // 강제 에러 발생
+      let x = '';
+
+      try {
+        if (x === '') {
+          throw 'empty';
+        } else {
+        }
+
+        if (x !== '') {
+          // x 비어있지 않을 경우에 실행할 코드
+        }
+
+        // x 비어있지 않을 경우에 실행할 코드
+      } catch (error) {
+        console.log(error);
+      }
+    </script>
+  </body>
+</html>

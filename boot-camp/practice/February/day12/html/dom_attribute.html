@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name="abc"
+      id="userId"
+      value=""
+      onkeyup="checkRequired()"
+    />
+    <br />
+    <br />
+    <select name="" id="city" onchange="selectCity()">
+      <option value="02">서울</option>
+      <option value="051">부산</option>
+      <option value="064">제주도</option>
+    </select>
+    <select name="" id="dong" disabled>
+      <option value="02">제주시</option>
+      <option value="051">서귀포시</option>
+    </select>
+    <button onclick="getInfo()">가져오기</button>
+    <button onclick="setInfo()">설정하기</button>
+    <button id="btnSave" onclick="doSave()" disabled>저장하기</button>
+    <script>
+      function getInfo() {
+        let userId = document.querySelector('#userId').value;
+        // let userId = document.querySelector('#userId').getAttribute('name');
+        console.log(userId);
+      }
+
+      function setInfo() {
+        // document.querySelector('#userId').value;
+        // document.querySelector('#userId').setAttribute('value', 'jeremy');
+      }
+
+      function checkRequired() {
+        if (document.querySelector('#userId').value.length > 0) {
+          document.querySelector('#btnSave').disabled = false;
+        } else {
+          document.querySelector('#btnSave').disabled = true;
+        }
+      }
+
+      function doSave() {}
+
+      function selectCity() {}
+    </script>
+  </body>
+</html>

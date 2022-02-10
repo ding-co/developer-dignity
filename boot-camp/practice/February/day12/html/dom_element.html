@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="userId">사용자ID</label>
+    <input type="text" name="" id="userId" class="form-input" />
+    <br />
+    <label for="userPass">비밀번호</label>
+    <input type="text" name="" id="userPass" />
+    <br />
+    <button onClick="login()">로그인</button>
+    <br />
+    <input type="checkbox" value="html" name="chk_pl" id="chk_html" />
+    <label for="chk_html">HTML</label>
+    <input type="checkbox" value="css" name="chk_pl" id="chk_css" />
+    <label for="chk_css">CSS</label>
+    <input type="checkbox" value="javascript" name="chk_pl" id="chk_js" />
+    <label for="chk_js">JavaScript</label>
+    <br />
+    <button onclick="doSave2()">저장</button>
+    <script>
+      function login() {
+        const userIdElement = document.getElementById('userId');
+        const userId = userIdElement.value;
+        console.log(userId);
+      }
+
+      function doSave() {
+        let chks = document.getElementsByName('chk_pl');
+        let checkValue = [];
+        for (const chk of chks) {
+          // console.log(chk);
+          if (chk.checked) {
+            checkValue.push(chk.value);
+          }
+        }
+
+        console.log(checkValue);
+      }
+
+      function doSave2() {
+        let checkedEles = document.querySelectorAll('[name=chk_pl]:checked');
+        console.log([...checkedEles].map((checkedEle) => checkedEle.value));
+      }
+
+      // document.getElementsByTagName('label');
+      // document.getElementsByClassName('form-input');
+      // document.getElementsByName('');
+      // document.querySelector('#userId');
+      // document.querySelectorAll('input');
+    </script>
+  </body>
+</html>

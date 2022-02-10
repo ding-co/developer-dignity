@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="city" onchange="selectCity2()">
+      <option value="">==선택==</option>
+      <option value="02">서울</option>
+      <option value="051">부산</option>
+      <option value="064">제주도</option>
+    </select>
+    <select name="" id="si" disabled></select>
+    <script>
+      const cities = [
+        { city: '064', cityName: '제주도', si: '1', siName: '제주시' },
+        { city: '064', cityName: '제주도', si: '2', siName: '서귀포시' },
+        { city: '02', cityName: '서울', si: '3', siName: '관악구' },
+        { city: '02', cityName: '서울', si: '4', siName: '강서구' },
+        { city: '051', cityName: '부산', si: '5', siName: '해운대' },
+      ];
+
+      function selectCity() {
+        const city = document.querySelector('#city').value;
+        if (city === '064') {
+          let options = [];
+          let cities = [
+            { code: 1, name: '제주시' },
+            { code: 2, name: '서귀포시' },
+          ];
+          cities.forEach((city) => {
+            options.push(`<option value="${city.code}">${city.name}</option>`);
+          });
+          document.querySelector('#si').innerHTML = options.join('');
+          document.querySelector('#si').disabled = false;
+        } else {
+          document.querySelector('#si').innerHTML = '';
+          document.querySelector('#si').disabled = true;
+        }
+      }
+
+      function selectCity2() {
+        const city = document.querySelector('#city').value;
+        if (city !== '') {
+          // 서버로 데이터 요청 city를 파라미터로 전송
+          let selectCity = cities.filter((c) => c.city === city);
+          console.log(selectCity);
+        }
+      }
+    </script>
+  </body>
+</html>

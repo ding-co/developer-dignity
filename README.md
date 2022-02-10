@@ -23,7 +23,13 @@
 
 > - [x] [22_01_27_Thu - JS 5](boot-camp/note/January/22_01_27_Thu.md)
 
-> - [x] [22_02_08_Tue - JS 6](boot-camp/note/January/22_02_08_Tue.md)
+> - [x] [22_02_08_Tue - JS 6](boot-camp/note/February/22_02_08_Tue.md)
+
+> - [x] [22_02_10_Thu - JS 7](boot-camp/note/February/22_02_10_Thu.md)
+
+> - [ ] [22_02_15_Tue - JS 8](boot-camp/note/February/22_02_15_Tue.md)
+
+> - [ ] [22_02_17_Thu - JS 9](boot-camp/note/February/22_02_17_Thu.md)
 
 </details>
 
