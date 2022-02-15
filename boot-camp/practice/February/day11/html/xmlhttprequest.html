@@ -36,7 +36,7 @@
             if (xhr.status === 200) {
               const res = JSON.parse(xhr.response);
               // console.log(res);
-              return resolve(res);
+              resolve(res);
             } else {
               console.log(xhr.status, xhr.statusText);
               reject(xhr.status);
