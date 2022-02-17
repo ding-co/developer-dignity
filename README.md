@@ -29,7 +29,7 @@
 
 > - [x] [22_02_15_Tue - JS 8](boot-camp/note/February/22_02_15_Tue.md)
 
-> - [ ] [22_02_17_Thu - JS 9](boot-camp/note/February/22_02_17_Thu.md)
+> - [xs] [22_02_17_Thu - JS 9](boot-camp/note/February/22_02_17_Thu.md)
 
 > - [ ] [22_02_22_Tue - JS 10](boot-camp/note/February/22_02_22_Tue.md)
 

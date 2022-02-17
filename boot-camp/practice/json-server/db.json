@@ -73,49 +73,13 @@
       "favoriteFruit": "strawberry"
     },
     {
-      "id": "620b7e244d0927c6d39eaa3a",
-      "index": 6,
-      "guid": "4d3cf980-be6d-482c-a374-69bf51358826",
-      "isActive": true,
-      "balance": "$1,512.57",
-      "picture": "http://placehold.it/32x32",
-      "age": 32,
-      "eyeColor": "brown",
       "name": "Floyd Jenkins",
       "gender": "male",
       "company": "ROCKLOGIC",
       "email": "floydjenkins@rocklogic.com",
-      "phone": "+1 (963) 536-2356",
+      "phone": "010-0000-0000",
       "address": "590 Drew Street, Garberville, Idaho, 8107",
-      "about": "Sit consectetur sunt ipsum elit. Veniam aute tempor proident labore ut proident adipisicing qui cupidatat eu ea voluptate. Sit esse magna consequat incididunt adipisicing Lorem labore reprehenderit eiusmod deserunt. Exercitation laboris minim pariatur aliqua voluptate fugiat nulla fugiat duis quis. Enim ea irure do et officia quis culpa.\r\n",
-      "registered": "2020-01-28T12:11:15 -09:00",
-      "latitude": 58.899344,
-      "longitude": 103.054318,
-      "tags": [
-        "in",
-        "incididunt",
-        "do",
-        "occaecat",
-        "fugiat",
-        "culpa",
-        "commodo"
-      ],
-      "friends": [
-        {
-          "id": 0,
-          "name": "Nieves Tucker"
-        },
-        {
-          "id": 1,
-          "name": "Jolene Garza"
-        },
-        {
-          "id": 2,
-          "name": "Chris Simmons"
-        }
-      ],
-      "greeting": "Hello, Floyd Jenkins! You have 3 unread messages.",
-      "favoriteFruit": "apple"
+      "id": "620b7e244d0927c6d39eaa3a"
     },
     {
       "id": "620b7e241887d052cb1b2844",
@@ -719,6 +683,51 @@
       "phone": "010-0000-0000",
       "address": "경기 오산시 부산중앙로 11",
       "id": "XoWPfh4"
+    },
+    {
+      "name": "ㄴㅇㅀㄴ",
+      "company": "ㅇㅀㅇㄶ",
+      "gender": "male",
+      "email": "ㅎㄴㅇㅀ",
+      "phone": "ㅇㄴㄹㄴㅇㅎ",
+      "address": "ㄴㅇㅎㄹㅇㅀㄴㅇㅎ",
+      "id": "_gS9nPV"
+    },
+    {
+      "name": "asdf",
+      "company": "",
+      "gender": "male",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "id": "NvLlDqT"
+    },
+    {
+      "name": "",
+      "company": "",
+      "gender": "male",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "id": "BijRMTG"
+    },
+    {
+      "name": "asdf",
+      "company": "sadf",
+      "gender": "male",
+      "email": "sadfsa@naver.com",
+      "phone": "010-0000-0000",
+      "address": "fsadfsdf",
+      "id": "OiWhxt0"
+    },
+    {
+      "name": "sdfa",
+      "company": "sdfsd",
+      "gender": "male",
+      "email": "ff@naver.com",
+      "phone": "010-0000-0000",
+      "address": "sdf",
+      "id": "NI8TZg4"
     }
   ]
 }
