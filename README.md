@@ -31,7 +31,11 @@
 
 > - [x] [22_02_17_Thu - JS 9](boot-camp/note/February/22_02_17_Thu.md)
 
-> - [ ] [22_02_22_Tue - JS 10](boot-camp/note/February/22_02_22_Tue.md)
+> - [x] [22_02_22_Tue - JS 10](boot-camp/note/February/22_02_22_Tue.md)
+
+> - [ ] [22_02_23_Wed - BootStrap 1](boot-camp/note/February/22_02_23_Wed.md)
+
+> - [ ] [22_02_24_Thu - BootStrap 2](boot-camp/note/February/22_02_24_Thu.md)
 
 </details>
 
