@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .invalid-message {
+        display: none;
+        margin-top: 5px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <label for="email">이메일</label>
+        <input type="email" name="" id="email" required />
+        <div class="invalid-message"></div>
+      </div>
+      <div>
+        <label for="pw">패스워드</label>
+        <input type="password" name="" id="pw" />
+      </div>
+      <button onclick="login();">로그인</button>
+    </div>
+    <script>
+      function login() {
+        const email = document.querySelector('#email');
+        const pw = document.querySelector('#pw');
+
+        if (!email.checkValidity()) {
+          console.log(email.validationMessage);
+          document.querySelectorAll('#email ~ .invalid-message')[0].innerText =
+            email.validationMessage;
+          document.querySelectorAll(
+            '#email ~ .invalid-message'
+          )[0].style.display = 'block';
+          return;
+        } else {
+          document.querySelectorAll(
+            '#email ~ .invalid-message'
+          )[0].style.display = 'none';
+        }
+
+        if (!pw.checkValidity()) {
+          console.log(pw.validationMessage);
+          return;
+        }
+      }
+    </script>
+  </body>
+</html>
