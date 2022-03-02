@@ -48,6 +48,60 @@ const routes = [
     name: 'DataBindingInputView',
     component: (/* webpackChunkName: "databinding" */) =>
       import('../views/1_databinding/DataBindingInputView.vue')
+  },
+  {
+    path: '/databinding/select',
+    name: 'DataBindingSelectView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingSelectView.vue')
+  },
+  {
+    path: '/databinding/checkbox',
+    name: 'DataBindingCheckboxView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingCheckboxView.vue')
+  },
+  {
+    path: '/databinding/radio',
+    name: 'DataBindingRadioView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingRadioView.vue')
+  },
+  {
+    path: '/databinding/attribute',
+    name: 'DataBindingAttributeView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingAttributeView.vue')
+  },
+  {
+    path: '/databinding/style',
+    name: 'DataBindingStyleView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingStyleView.vue')
+  },
+  {
+    path: '/databinding/class',
+    name: 'DataBindingClassView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingClassView.vue')
+  },
+  {
+    path: '/databinding/list',
+    name: 'DataBindingListView',
+    component: (/* webpackChunkName: "databinding" */) =>
+      import('../views/1_databinding/DataBindingListView.vue')
+  },
+  {
+    path: '/event/click',
+    name: 'EventClickView',
+    component: (/* webpackChunkName: "event" */) =>
+      import('../views/2_event/EventClickView.vue')
+  },
+  {
+    path: '/event/change',
+    name: 'EventChangeView',
+    component: (/* webpackChunkName: "event" */) =>
+      import('../views/2_event/EventChangeView.vue')
   }
 ]
 

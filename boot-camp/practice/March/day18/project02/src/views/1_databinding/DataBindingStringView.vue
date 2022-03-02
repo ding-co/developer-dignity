@@ -11,7 +11,7 @@ export default {
   data() {
     return {
       userName: 'ding-co',
-      useName2: 'ding'
+      userName2: 'ding'
     }
   }
 }
