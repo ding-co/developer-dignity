@@ -102,6 +102,48 @@ const routes = [
     name: 'EventChangeView',
     component: (/* webpackChunkName: "event" */) =>
       import('../views/2_event/EventChangeView.vue')
+  },
+  {
+    path: '/event/key',
+    name: 'EventKeyView',
+    component: (/* webpackChunkName: "event" */) =>
+      import('../views/2_event/EventKeyView.vue')
+  },
+  {
+    path: '/extra/if',
+    name: 'RenderingIfView',
+    component: (/* webpackChunkName: "extra" */) =>
+      import('../views/3_extra/RenderingIfView.vue')
+  },
+  {
+    path: '/extra/show',
+    name: 'RenderingShowView',
+    component: (/* webpackChunkName: "extra" */) =>
+      import('../views/3_extra/RenderingShowView.vue')
+  },
+  {
+    path: '/extra/computed',
+    name: 'ComputedView',
+    component: (/* webpackChunkName: "extra" */) =>
+      import('../views/3_extra/ComputedView.vue')
+  },
+  {
+    path: '/extra/watch',
+    name: 'WatchView',
+    component: (/* webpackChunkName: "extra" */) =>
+      import('../views/3_extra/WatchView.vue')
+  },
+  {
+    path: '/reuse/page',
+    name: 'PageView',
+    component: (/* webpackChunkName: "reuse" */) =>
+      import('../views/4_reuse/PageView.vue')
+  },
+  {
+    path: '/reuse/list',
+    name: 'ListView',
+    component: (/* webpackChunkName: "reuse" */) =>
+      import('../views/4_reuse/ListView.vue')
   }
 ]
 
