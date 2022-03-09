@@ -1,7 +1,19 @@
 <template>
   <div>
     <button class="btn btn-danger" @click="doSearch">조회</button>
-    <simple-grid :headers="headers" :items="drinkList" />
+    <button class="btn btn-danger" @click="doDelete">삭제</button>
+    <button class="btn btn-primary" @click="$refs.smGrid.doExcel()">
+      엑셀 다운로드
+    </button>
+    <simple-grid
+      :headers="headers"
+      :items="drinkList"
+      selectType="checkbox"
+      checkedKey="drinkId"
+      changeEventName="change-item"
+      @change-item="changeCheckedValue"
+      ref="smGrid"
+    />
   </div>
 </template>
 <script>
@@ -24,13 +36,36 @@ export default {
           key: 'price'
         }
       ],
-      drinkList: []
+      drinkList: [],
+      checkedItems: []
     }
   },
-  setup() {},
-  created() {},
-  mounted() {},
-  unmounted() {},
+  setup() {
+    // composition API
+  },
+  beforeCreate() {
+    console.log('beforeCreate')
+  },
+  created() {
+    console.log('created')
+  },
+  beforeMount() {
+    console.log('beforeMount')
+  },
+  mounted() {
+    console.log('mounted')
+    this.doSearch()
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate')
+  },
+  updated() {
+    console.log('updated')
+  },
+  beforeUnmount() {},
+  unmounted() {
+    // this.drinkList = null
+  },
   methods: {
     doSearch() {
       this.drinkList = [
@@ -77,6 +112,14 @@ export default {
           qty: 1
         }
       ]
+    },
+    changeCheckedValue(data) {
+      this.checkedItems = data
+    },
+    doDelete() {
+      console.log(this.checkedItems)
+      this.$refs.smGrid.sampleData = 'B'
+      this.$refs.smGrid.doPrint()
     }
   }
 }
