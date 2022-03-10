@@ -134,6 +134,12 @@ const routes = [
       import('../views/3_extra/WatchView.vue')
   },
   {
+    path: '/extra/lifecycle',
+    name: 'LifecycleHook',
+    component: (/* webpackChunkName: "extra" */) =>
+      import('../views/3_extra/LifecycleHookView.vue')
+  },
+  {
     path: '/reuse/page',
     name: 'PageView',
     component: (/* webpackChunkName: "reuse" */) =>
@@ -150,6 +156,24 @@ const routes = [
     name: 'SlotView',
     component: (/* webpackChunkName: "reuse" */) =>
       import('../views/4_reuse/SlotView.vue')
+  },
+  {
+    path: '/reuse/parent',
+    name: 'ParentView',
+    component: (/* webpackChunkName: "reuse" */) =>
+      import('../views/4_reuse/ParentView.vue')
+  },
+  {
+    path: '/advanced/provide',
+    name: 'ProvideView',
+    component: (/* webpackChunkName: "advanced" */) =>
+      import('../views/5_advanced/ProvideView.vue')
+  },
+  {
+    path: '/advanced/directive',
+    name: 'CustomDirectiveView',
+    component: (/* webpackChunkName: "advanced" */) =>
+      import('../views/5_advanced/CustomDirectiveView.vue')
   }
 ]
 
