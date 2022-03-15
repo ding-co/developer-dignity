@@ -174,6 +174,18 @@ const routes = [
     name: 'CustomDirectiveView',
     component: (/* webpackChunkName: "advanced" */) =>
       import('../views/5_advanced/CustomDirectiveView.vue')
+  },
+  {
+    path: '/advanced/mixin',
+    name: 'MixinView',
+    component: (/* webpackChunkName: "advanced" */) =>
+      import('../views/5_advanced/MixinView.vue')
+  },
+  {
+    path: '/advanced/plugin',
+    name: 'PluginView',
+    component: (/* webpackChunkName: "advanced" */) =>
+      import('../views/5_advanced/PluginView.vue')
   }
 ]
 
