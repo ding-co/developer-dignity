@@ -1,14 +1,7 @@
 import { createStore } from 'vuex'
+import { todo } from './todo'
+import { user } from './user'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+  modules: { todo: todo, user: user }
 })

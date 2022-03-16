@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+// import store from '../store'
 // import AboutView from '../views/AboutView.vue'
 import HomeView from '../views/HomeView.vue'
 // import HelloView from '../views.HelloView.vue'
@@ -186,6 +187,12 @@ const routes = [
     name: 'PluginView',
     component: (/* webpackChunkName: "advanced" */) =>
       import('../views/5_advanced/PluginView.vue')
+  },
+  {
+    path: '/vuex/todo',
+    name: 'TodoView',
+    component: (/* webpackChunkName: "vuex" */) =>
+      import('../views/6_vuex/TodoView.vue')
   }
 ]
 
@@ -193,5 +200,22 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+//   console.log('to', to)
+//   console.log('from', from)
+
+//   if (to.path === '/') {
+//     next()
+//   } else if (to.path === '/vuex/todo') {
+//     next()
+//   } else {
+//     if (store.getters['user/isLogin']) {
+//       next()
+//     } else {
+//       next('/vuex/todo')
+//     }
+//   }
+// })
 
 export default router

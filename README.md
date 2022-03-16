@@ -39,17 +39,17 @@
 
 > - [x] [22_03_01_Tue - Vue.js 1](boot-camp/note/February/22_03_01_Tue.md)
 
-> - [ ] [22_03_02_Wed - Vue.js 2](boot-camp/note/February/22_03_02_Wed.md)
+> - [x] [22_03_02_Wed - Vue.js 2](boot-camp/note/February/22_03_02_Wed.md)
 
-> - [ ] [22_03_03_Thu - Vue.js 3](boot-camp/note/February/22_03_03_Thu.md)
+> - [x] [22_03_03_Thu - Vue.js 3](boot-camp/note/February/22_03_03_Thu.md)
 
-> - [ ] [22_03_08_Tue - Vue.js 4](boot-camp/note/February/22_03_08_Tue.md)
+> - [x] [22_03_08_Tue - Vue.js 4](boot-camp/note/February/22_03_08_Tue.md)
 
-> - [ ] [22_03_10_Thu - Vue.js 5](boot-camp/note/February/22_03_10_Thu.md)
+> - [x] [22_03_10_Thu - Vue.js 5](boot-camp/note/February/22_03_10_Thu.md)
 
-> - [ ] [22_03_15_Tue - Vue.js 6](boot-camp/note/February/22_03_15_Tue.md)
+> - [x] [22_03_15_Tue - Vue.js 6](boot-camp/note/February/22_03_15_Tue.md)
 
-> - [ ] [22_03_16_Wed - Vue.js 7](boot-camp/note/February/22_03_16_Wed.md)
+> - [x] [22_03_16_Wed - Vue.js 7](boot-camp/note/February/22_03_16_Wed.md)
 
 > - [ ] [22_03_17_Thu - Vue.js 8](boot-camp/note/February/22_03_17_Thu.md)
 
