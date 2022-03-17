@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "vue-cookies": "^1.7.4",
+    "vuex-persistedstate": "^4.1.0"
+  }
+}

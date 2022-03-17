@@ -1,14 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import store from '../store'
-// import AboutView from '../views/AboutView.vue'
+import store from '../store'
 import HomeView from '../views/HomeView.vue'
+import LoginView from '../views/LoginView'
+// import AboutView from '../views/AboutView.vue'
 // import HelloView from '../views.HelloView.vue'
 
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/home',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/login',
+    name: 'login2',
+    component: LoginView
   },
   // {
   //   path: '/about',
@@ -193,6 +204,12 @@ const routes = [
     name: 'TodoView',
     component: (/* webpackChunkName: "vuex" */) =>
       import('../views/6_vuex/TodoView.vue')
+  },
+  {
+    path: '/template/listtodetail',
+    name: 'ListToDetailView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/ListToDetailView.vue')
   }
 ]
 
@@ -201,21 +218,20 @@ const router = createRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   console.log('to', to)
-//   console.log('from', from)
+router.beforeEach((to, from, next) => {
+  // console.log('to', to)
+  // console.log('from', from)
 
-//   if (to.path === '/') {
-//     next()
-//   } else if (to.path === '/vuex/todo') {
-//     next()
-//   } else {
-//     if (store.getters['user/isLogin']) {
-//       next()
-//     } else {
-//       next('/vuex/todo')
-//     }
-//   }
-// })
+  if (to.path === '/') {
+    next()
+  } else {
+    if (store.getters['user/isLogin']) {
+      next()
+    } else {
+      store.commit('user/logout')
+      next('/')
+    }
+  }
+})
 
 export default router
