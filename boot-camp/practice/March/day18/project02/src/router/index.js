@@ -210,6 +210,24 @@ const routes = [
     name: 'ListToDetailView',
     component: (/* webpackChunkName: "template" */) =>
       import('../views/7_template/ListToDetailView.vue')
+  },
+  {
+    path: '/template/detail',
+    name: 'DetailView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/DetailView.vue')
+  },
+  {
+    path: '/template/create',
+    name: 'CreateView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/CreateView.vue')
+  },
+  {
+    path: '/template/change',
+    name: 'ChangeView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/ChangeView.vue')
   }
 ]
 

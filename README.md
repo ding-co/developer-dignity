@@ -51,11 +51,11 @@
 
 > - [x] [22_03_16_Wed - Vue.js 7](boot-camp/note/February/22_03_16_Wed.md)
 
-> - [ ] [22_03_17_Thu - Vue.js 8](boot-camp/note/February/22_03_17_Thu.md)
+> - [x] [22_03_17_Thu - Vue.js 8](boot-camp/note/February/22_03_17_Thu.md)
 
-> - [ ] [22_03_22_Tue - Vue.js 9](boot-camp/note/February/22_03_22_Tue.md)
+> - [x] [22_03_22_Tue - Vue.js 9](boot-camp/note/February/22_03_22_Tue.md)
 
-> - [ ] [22_03_24_Thu - Vue.js 10](boot-camp/note/February/22_03_24_Thu.md)
+> - [x] [22_03_24_Thu - Vue.js 10](boot-camp/note/February/22_03_24_Thu.md)
 
 </details>
 
