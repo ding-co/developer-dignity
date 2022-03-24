@@ -228,6 +228,30 @@ const routes = [
     name: 'ChangeView',
     component: (/* webpackChunkName: "template" */) =>
       import('../views/7_template/ChangeView.vue')
+  },
+  {
+    path: '/template/singleedit',
+    name: 'SingleEditView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/SingleEditView.vue')
+  },
+  {
+    path: '/template/multipleedit',
+    name: 'MultipleEditView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/MultipleEditView.vue')
+  },
+  {
+    path: '/template/masterdetail',
+    name: 'MasterDetailView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/MasterDetailView.vue')
+  },
+  {
+    path: '/template/shuttle',
+    name: 'ShuttleView',
+    component: (/* webpackChunkName: "template" */) =>
+      import('../views/7_template/ShuttleView.vue')
   }
 ]
 
