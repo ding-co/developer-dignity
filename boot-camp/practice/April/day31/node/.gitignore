@@ -1,2 +1,5 @@
-mysql/
-node_modules/
+/mysql/.env
+/mysql/.env.prod
+/mysql/.env.test
+/nodemailer/.env
+/node_modules/
