@@ -3,3 +3,4 @@
 /mysql/.env.test
 /nodemailer/.env
 /node_modules/
+/mongodb/.env
