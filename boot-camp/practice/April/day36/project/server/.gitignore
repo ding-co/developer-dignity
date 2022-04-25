@@ -3,4 +3,7 @@ mysql/.env.test
 mysql/.env.prod
 nodemailer/.env.test
 nodemailer/.env.prod
-mongodb/.env
+mongodb/.env.test
+mongodb/.env.prod
+mongoose/.env.test
+mongoose/.env.prod

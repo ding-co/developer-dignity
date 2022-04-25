@@ -19,9 +19,9 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                :class="{ active: $route.path == '/home' }"
+                :class="{ active: $route.path == '/' }"
                 aria-current="page"
-                @click="goToMenu('/home')"
+                @click="goToMenu('/')"
                 >Home</a
               >
             </li>
@@ -39,30 +39,6 @@
                 :class="{ active: $route.path == '/product/supplier' }"
                 @click="goToMenu('/product/supplier')"
                 >Product Supplier</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                :class="{ active: $route.path == '/template/multipleedit' }"
-                @click="goToMenu('/template/multipleedit')"
-                >Multiple Edit</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                :class="{ active: $route.path == '/template/masterdetail' }"
-                @click="goToMenu('/template/masterdetail')"
-                >Master Detail</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                :class="{ active: $route.path == '/template/shuttle' }"
-                @click="goToMenu('/template/shuttle')"
-                >Shuttle</a
               >
             </li>
           </ul>

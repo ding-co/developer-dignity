@@ -9,11 +9,14 @@ const cors = require('cors');
 const multer = require('multer');
 
 require('dotenv').config({ path: `mysql/.env.${app.get('env')}` });
-// console.log(process.env);
 const mysql = require('./mysql');
-
 require('dotenv').config({ path: `nodemailer/.env.${app.get('env')}` });
 const nodemailer = require('./nodemailer');
+
+// require('dotenv').config({ path: `mongodb/.env.${app.get('env')}` });
+// const mongodb = require('./mongodb');
+// require('dotenv').config({ path: `mongoose/.env.${app.get('env')}` });
+// const mongoose = require('./mongoose');
 
 app.use('/static/images', express.static('public/images'));
 
@@ -61,7 +64,6 @@ const accessLogStream = rfs.createStream(generator, {
   path: path.join(__dirname, 'log'),
 });
 
-// app.use(morgan("combined", { stream: accessLogStream }));
 app.use(
   morgan('combined', {
     stream: accessLogStream,

@@ -292,18 +292,17 @@ export default {
       })
     },
     openModal(id) {
+      const newSelectedItem = JSON.stringify(
+        this.list.filter((item) => item.product_category_id === id)[0]
+      )
       if (id === undefined) {
         this.selectedItem = {
           product_category_id: -1,
           category_name: '',
           category_description: ''
         }
-      } else {
-        this.selectedItem = JSON.parse(
-          JSON.stringify(
-            this.list.filter((item) => item.product_category_id === id)[0]
-          )
-        )
+      } else if (newSelectedItem) {
+        this.selectedItem = JSON.parse(newSelectedItem)
       }
     },
     clearSelectedItem() {
