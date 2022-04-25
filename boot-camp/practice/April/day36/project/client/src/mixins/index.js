@@ -7,9 +7,7 @@ axios.defaults.headers['Access-Control-Allow-Origin'] = '*'
 
 export default {
   created() {},
-  mounted() {
-    // console.log('mixin에서 출력')
-  },
+  mounted() {},
   unmounted() {},
   methods: {
     async $get(url) {
@@ -20,10 +18,14 @@ export default {
       ).data
     },
     async $post(url, data) {
-      return await axios.post(url, data).catch((e) => console.log(e))
+      return await axios.post(url, data).catch((e) => {
+        console.log(e)
+      })
     },
     async $put(url, data) {
-      return await axios.put(url, data).catch((e) => console.log(e))
+      return await axios.put(url, data).catch((e) => {
+        console.log(e)
+      })
     },
     async $delete(url) {
       return await axios.delete(url).catch((e) => {
@@ -31,17 +33,17 @@ export default {
       })
     },
     async $upload(url, file) {
-      // form tag
       const formData = new FormData()
-      // input:file 태그의 name 속성이 attachment
       formData.append('attachment', file)
       return (
-        await axios.post(url, formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
-        })
-      ).catch((e) => {
-        console.log(e)
-      }).data
+        await axios
+          .post(url, formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+          })
+          .catch((e) => {
+            console.log(e)
+          })
+      ).data
     },
     async $ExcelFromTable(
       header = [],

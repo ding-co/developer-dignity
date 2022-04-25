@@ -1,18 +1,18 @@
 <template>
   <div class="container">
+    <!-- 조회조건 -->
     <div class="row row-cols-lg-auto g-3 align-items-center mb-1">
       <div class="col-12">
         <input
-          class="form-control"
           type="search"
-          placeholder="Name"
+          class="form-control"
           v-model.trim="searchName"
-          @keyup.enter="getList"
+          @keyup.enter="getCustomers"
+          placeholder="Name"
         />
       </div>
-      <!-- 조회  조건-->
       <div class="col-12">
-        <button class="btn btn-primary me-1" @click="getList">조회</button>
+        <button class="btn btn-primary me-1" @click="getCustomers">조회</button>
         <button
           class="btn btn-success me-1"
           data-bs-toggle="modal"
@@ -21,17 +21,15 @@
         >
           생성
         </button>
-        <button class="btn btn-info me-1" @click="doExcel">
-          엑셀 다운로드
-        </button>
+        <button class="btn btn-info me-1" @click="doExcel">엑셀다운로드</button>
       </div>
     </div>
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Category Name</th>
-          <th>Category Description</th>
+          <th>Name</th>
+          <th>Description</th>
           <th>Status</th>
           <th></th>
         </tr>
@@ -65,7 +63,7 @@
                 )
               "
             >
-              {{ item.use_yn === 'Y' ? '사용 중지' : '사용' }}
+              {{ item.use_yn === 'Y' ? '사용중지' : '사용' }}
             </button>
           </td>
         </tr>
@@ -83,7 +81,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">제품 카테고리</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">카테고리</h5>
             <button
               type="button"
               class="btn-close"
@@ -93,7 +91,7 @@
           </div>
           <div class="modal-body">
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">Name</label>
+              <label class="col-sm-3 col-form-label">Name</label>
               <div class="col-sm-9">
                 <input
                   type="text"
@@ -103,7 +101,7 @@
               </div>
             </div>
             <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">Description</label>
+              <label class="col-sm-3 col-form-label">Description</label>
               <div class="col-sm-9">
                 <input
                   type="text"
@@ -152,17 +150,15 @@ export default {
     return {
       headers: [
         { title: 'ID', key: 'product_category_id' },
-        { title: 'Category Name', key: 'category_name' },
-        { title: 'Category Description', key: 'category_description' },
-        { title: 'Status', key: 'use_yn' }
+        { title: 'Name', key: 'category_name' },
+        { title: 'Description', key: 'category_description' }
       ],
       list: [],
       searchName: '',
       selectedItem: {
         product_category_id: -1,
         category_name: '',
-        category_description: '',
-        status: ''
+        category_description: ''
       }
     }
   },
@@ -183,7 +179,7 @@ export default {
     },
     doDelete(id) {
       this.$swal({
-        title: '카테고리 정보를 정말 삭제 하시겠습니까?',
+        title: '카테고리를 정말 삭제 하시겠습니까?',
         text: '삭제된 데이터는 복원되지 않습니다.',
         icon: 'warning',
         showCancelButton: true,
@@ -197,15 +193,12 @@ export default {
           const r = await this.$delete(`/api/product/category/${id}`)
           loader.hide()
           if (r.status === 200) {
-            this.$swal('카테고리 정보가 삭제되었습니다.')
-            this.$getList()
+            this.$swal('카테고리가 삭제 되었습니다.')
+            this.getList()
           } else if (r.status === 501) {
-            // status code 체크
             this.$swal(
-              `삭제하려는 카테고리를 사용하는 제품이 ${r.count}건 존재합니다. `
+              `삭제하려는 카테고리를 사용하는 제품이 ${r.count}건 존재합니다.`
             )
-            // 전체 일괄 삭제 원하십니까?
-            // 전체 삭제하는 기능 추가 가능
           }
         }
       })
@@ -217,7 +210,7 @@ export default {
       }
       this.$swal({
         title: title,
-        // text: '',
+        // text: '삭제된 데이터는 복원되지 않습니다.',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -230,10 +223,11 @@ export default {
           const r = await this.$put(`/api/product/category/${id}`, {
             param: { use_yn: useYN }
           })
+          console.log(r)
           loader.hide()
           if (r.status === 200) {
-            this.$swal('카테고리 상태가 변경되었습니다.')
-            this.$getList()
+            this.$swal('카테고리가 상태가 변경 되었습니다.')
+            this.getList()
           }
         }
       })
@@ -241,7 +235,7 @@ export default {
     doSave() {
       this.$swal({
         title: '카테고리 정보를 수정 하시겠습니까?',
-        // text: "",
+        // text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -263,16 +257,16 @@ export default {
           loader.hide()
           if (r.status === 200) {
             this.$refs.btnClose.click()
-            this.$swal('카테고리 정보가 수정되었습니다.')
-            this.$getList()
+            this.$swal('카테고리 정보가 저장되었습니다.')
+            this.getList()
           }
         }
       })
     },
     doCreate() {
       this.$swal({
-        title: '카테고리 정보를 생성 하시겠습니까?',
-        // text: "",
+        title: '카테고리 생성 하시겠습니까?',
+        // text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -291,8 +285,8 @@ export default {
           loader.hide()
           if (r.status === 200) {
             this.$refs.btnClose.click()
-            this.$swal('카테고리 정보가 생성되었습니다.')
-            this.$getList()
+            this.$swal('카테고리가 생성 되었습니다.')
+            this.getList()
           }
         }
       })
@@ -302,11 +296,9 @@ export default {
         this.selectedItem = {
           product_category_id: -1,
           category_name: '',
-          category_description: '',
-          status: ''
+          category_description: ''
         }
       } else {
-        // 깊은 복사
         this.selectedItem = JSON.parse(
           JSON.stringify(
             this.list.filter((item) => item.product_category_id === id)[0]
@@ -318,8 +310,7 @@ export default {
       this.selectedItem = {
         product_category_id: -1,
         category_name: '',
-        category_description: '',
-        status: ''
+        category_description: ''
       }
     }
   }

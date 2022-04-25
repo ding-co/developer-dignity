@@ -8,9 +8,11 @@ const path = require('path');
 const cors = require('cors');
 const multer = require('multer');
 
-require('dotenv').config({ path: `./mysql/.env.${app.get('env')}}` });
+require('dotenv').config({ path: `mysql/.env.${app.get('env')}` });
+// console.log(process.env);
 const mysql = require('./mysql');
-require('dotenv').config({ path: `./nodemailer/.env.${app.get('env')}}` });
+
+require('dotenv').config({ path: `nodemailer/.env.${app.get('env')}` });
 const nodemailer = require('./nodemailer');
 
 app.use('/static/images', express.static('public/images'));
@@ -21,15 +23,14 @@ app.use(
   })
 ); // 클라이언트 요청 body를 json으로 파싱 처리
 
-
 let sess = {
   secret: 'secret key',
   resave: false, // 세션에 변경사항이 없어도 항상 다시 저장할지 여부
   saveUninitialized: true, // 초기화되지 않은 세션을 저장소에 강제로 저장할지 여부
   cookie: {
     httpOnly: true, // document.cookie 해도 쿠키 정보를 볼 수 없음
-    secure: false, // https 실행 여부
-    maxAge: 1000 * 60 * 60, // 클라이언트에 쿠키가 유지되는 시간 (1000이 1초)
+    secure: false, // https
+    maxAge: 1000 * 60 * 60, // 쿠키가 유지되는 시간
   },
 };
 
@@ -42,33 +43,25 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// 파일 만들어지는 시간, 파일 만들어진 순서
 const generator = (time, index) => {
   if (!time) return 'file.log';
 
-  const yearMonth =
+  const yearmonth =
     time.getFullYear() + (time.getMonth() + 1).toString().padStart(2, '0');
   const day = time.getDate().toString().padStart(2, '0');
   const hour = time.getHours().toString().padStart(2, '0');
   const minute = time.getMinutes().toString().padStart(2, '0');
 
-  return `${yearMonth}/${yearMonth}${day}-${hour}${minute}-${index}-file.log`;
+  return `${yearmonth}/${yearmonth}${day}-${hour}${minute}-${index}-file.log`;
 };
 
-// 첫 번째 인자는 파일명 (자동으로 만들어져야 함)
 const accessLogStream = rfs.createStream(generator, {
-  // 1분 단위로 로그 생성
-  // 실무에서는 보통 1d (하루 단위)
-  interval: '1d',
+  interval: '1d', // 1d
   size: '10M',
-  // log 폴더에 관리
   path: path.join(__dirname, 'log'),
 });
 
-// combined; log 남기는 기본 포맷
-// stream => 파일 만들어 내는 형식 지정
-// app.use(morgan('combined', { stream: accessLogStream }));
-
+// app.use(morgan("combined", { stream: accessLogStream }));
 app.use(
   morgan('combined', {
     stream: accessLogStream,
@@ -82,9 +75,8 @@ const imageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'public/images'); // 전송된 파일이 저장되는 디렉토리
   },
-  // 현재 '년월일시분초.확장자명'
   filename: function (req, file, cb) {
-    cb(null, new Date().valueOf() + path.extname(file.originalname)); // 시스템 시간으로 파일 이름을 변경해서 저장
+    cb(null, new Date().valueOf() + path.extname(file.originalname)); // 시스템 시간으로 파일이름을 변경해서 저장
   },
 });
 
@@ -94,42 +86,42 @@ const fileStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads'); // 전송된 파일이 저장되는 디렉토리
   },
-  // 현재 '년월일시분초.확장자명'
   filename: function (req, file, cb) {
-    cb(null, new Date().valueOf() + path.extname(file.originalname)); // 시스템 시간으로 파일 이름을 변경해서 저장
+    cb(null, new Date().valueOf() + path.extname(file.originalname)); // 시스템 시간으로 파일이름을 변경해서 저장
   },
 });
 
 const fileUpload = multer({ storage: fileStorage });
 
 const productRoute = require('./routes/product');
-
 app.use('/api/product', productRoute);
 
-// app.post('/login', (req, res) => {
+// app.post("/login", (req, res) => {
 //   const { email, pw } = req.body.param;
-//   // TODO: 데이터베이스에 사용자가 있는지, 비밀번호는 맞는지 체크
+//   // 데이터베이스에 사용자가 있는지, 비밀번호는 맞는지 체크
+
 //   req.session.email = email;
-//   req.session.isLogin = true;
+//   req.session.isLogined = true;
 //   req.session.save((err) => {
 //     if (err) throw err;
+
 //     res.send(req.session);
 //   });
 // });
 
-// app.post('/logout', (req, res) => {
+// app.post("/logout", (req, res) => {
 //   if (req.session.email) {
 //     req.session.destroy();
-//     res.redirect('/login');
+//     res.redirect("/login");
 //   }
 // });
 
-// app.all('*', (req, res, next) => {
+// app.all("*", (req, res, next) => {
 //   if (req.session.email) {
 //     console.log(req.cookies);
 //     next();
 //   } else {
-//     res.redirect('/login');
+//     res.redirect("/login");
 //   }
 // });
 
@@ -147,29 +139,37 @@ app.get('/api/file/:filename', (req, res) => {
   }
 });
 
-app.post('/api/upload/image', imageUpload.single('attachment'), (req, res) => {
-  const fileInfo = {
-    product_id: parseInt(req.body.product_id),
-    originalname: req.file.originalname,
-    mimetype: req.file.mimetype,
-    filename: req.file.filename,
-    path: req.file.path,
-  };
+app.post(
+  '/api/upload/file',
+  fileUpload.single('attachment'),
+  async (req, res) => {
+    const fileInfo = {
+      product_id: parseInt(req.body.product_id),
+      originalname: req.file.originalname,
+      mimetype: req.file.mimetype,
+      filename: req.file.filename,
+      path: req.file.path,
+    };
 
-  res.send(fileInfo);
-});
+    res.send(fileInfo);
+  }
+);
 
-app.post('/api/upload/file', fileUpload.single('attachment'), (req, res) => {
-  const fileInfo = {
-    product_id: parseInt(req.body.product_id),
-    originalname: req.file.originalname,
-    mimetype: req.file.mimetype,
-    filename: req.file.filename,
-    path: req.file.path,
-  };
+app.post(
+  '/api/upload/image',
+  imageUpload.single('attachment'),
+  async (req, res) => {
+    const fileInfo = {
+      product_id: parseInt(req.body.product_id),
+      originalname: req.file.originalname,
+      mimetype: req.file.mimetype,
+      filename: req.file.filename,
+      path: req.file.path,
+    };
 
-  res.send(fileInfo);
-});
+    res.send(fileInfo);
+  }
+);
 
 app.listen(3000, () => {
   console.log('서버가 포트 3000번으로 시작되었습니다.');
