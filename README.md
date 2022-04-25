@@ -83,11 +83,11 @@
 
 > - [x] [22_04_13_Wed - Node.js 04](boot-camp/note/April/22_04_13_Wed.md)
 
-> - [ ] [22_04_19_Tue - Node.js 05](boot-camp/note/April/22_04_19_Tue.md)
+> - [x] [22_04_19_Tue - Node.js 05](boot-camp/note/April/22_04_19_Tue.md)
 
 ### _Vue.js + Node.js_
 
-> - [ ] [22_04_21_Thu - Vue.js + Node.js 01](boot-camp/note/April/22_04_21_Thu.md)
+> - [x] [22_04_21_Thu - Vue.js + Node.js 01](boot-camp/note/April/22_04_21_Thu.md)
 
 > - [ ] [22_04_26_Tue - Vue.js + Node.js 02](boot-camp/note/April/22_04_26_Tue.md)
 
