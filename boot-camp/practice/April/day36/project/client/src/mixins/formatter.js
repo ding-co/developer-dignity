@@ -6,7 +6,7 @@ export default {
     // 2022/03/15
     // 미국 - Mar 15, 2022
     // 유럽 - 15.03.2022
-    $convertDateFormat (d, f) {
+    $convertDateFormat(d, f) {
       let year = ''
       let month = ''
       let day = ''
@@ -39,7 +39,7 @@ export default {
     // #,###.##%
     // +, - (sign)
 
-    $convertNumberFormat (amount, format) {
+    $convertNumberFormat(amount, format) {
       let currencySymbol = ''
       let lastSymbol = ''
 

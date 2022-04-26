@@ -25,11 +25,51 @@ const routes = [
       )
   },
   {
-    path: '/product/supplier',
-    name: 'product_supplier',
+    path: '/supplier/create',
+    name: 'supplier_create',
     component: () =>
       import(
-        /* webpackChunkName: "product" */ '../views/supplier/SupplierView.vue'
+        /* webpackChunkName: "supplier" */ '../views/supplier/SupplierCreateView.vue'
+      )
+  },
+  {
+    path: '/supplier/list',
+    name: 'supplier_list',
+    component: () =>
+      import(
+        /* webpackChunkName: "supplier" */ '../views/supplier/SupplierListView.vue'
+      )
+  },
+  {
+    path: '/supplier/detail',
+    name: 'supplier_detail',
+    component: () =>
+      import(
+        /* webpackChunkName: "supplier" */ '../views/supplier/SupplierDetailView.vue'
+      )
+  },
+  {
+    path: '/product/create',
+    name: 'product_create',
+    component: () =>
+      import(
+        /* webpackChunkName: "product" */ '../views/product/ProductCreateView.vue'
+      )
+  },
+  {
+    path: '/product/list',
+    name: 'product_list',
+    component: () =>
+      import(
+        /* webpackChunkName: "product" */ '../views/product/ProductListView.vue'
+      )
+  },
+  {
+    path: '/product/detail',
+    name: 'product_detail',
+    component: () =>
+      import(
+        /* webpackChunkName: "product" */ '../views/product/ProductDetailView.vue'
       )
   }
 ]

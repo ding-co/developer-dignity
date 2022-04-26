@@ -7,12 +7,12 @@
           type="search"
           class="form-control"
           v-model.trim="searchName"
-          @keyup.enter="getCustomers"
+          @keyup.enter="getList"
           placeholder="Name"
         />
       </div>
       <div class="col-12">
-        <button class="btn btn-primary me-1" @click="getCustomers">조회</button>
+        <button class="btn btn-primary me-1" @click="getList">조회</button>
         <button
           class="btn btn-success me-1"
           data-bs-toggle="modal"
@@ -171,7 +171,11 @@ export default {
   methods: {
     async getList() {
       const loader = this.$loading.show({ canCancel: false })
-      this.list = await this.$get('/api/product/category')
+      this.list = (
+        await this.$post('/api/product/category/search', {
+          param: `%${this.searchName.toLowerCase()}%`
+        })
+      ).data
       loader.hide()
     },
     doExcel() {

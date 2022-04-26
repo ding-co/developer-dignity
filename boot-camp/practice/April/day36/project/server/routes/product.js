@@ -13,6 +13,15 @@ router.get('/category/:product_category_id', async (req, res) => {
   res.send(categoryList);
 });
 
+// 조회 (post 방식)
+router.post('/category/search', async (req, res) => {
+  const categoryList = await mysql.query(
+    'categoryListByCondition',
+    req.body.param
+  );
+  res.send(categoryList);
+});
+
 router.post('/category', async (req, res) => {
   const result = await mysql.query('categoryInsert', req.body.param);
   res.send(result);
@@ -36,6 +45,16 @@ router.delete('/category/:product_category_id', async (req, res) => {
   } else {
     res.send({ status: 501, count: count[0] });
   }
+});
+
+router.post('/', async (req, res) => {
+  const result = await mysql.query('productInsert', req.body.param);
+  res.send(result);
+});
+
+router.get('/', async (req, res) => {
+  const productList = await mysql.query('productList');
+  res.send(productList);
 });
 
 module.exports = router;

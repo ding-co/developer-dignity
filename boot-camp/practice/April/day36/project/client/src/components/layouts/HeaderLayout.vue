@@ -30,15 +30,23 @@
                 class="nav-link"
                 :class="{ active: $route.path == '/product/category' }"
                 @click="goToMenu('/product/category')"
-                >Product Category</a
+                >Category</a
               >
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
-                :class="{ active: $route.path == '/product/supplier' }"
-                @click="goToMenu('/product/supplier')"
-                >Product Supplier</a
+                :class="{ active: $route.path == '/supplier/list' }"
+                @click="goToMenu('/supplier/list')"
+                >Supplier</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                :class="{ active: $route.path == '/product/list' }"
+                @click="goToMenu('/product/list')"
+                >Product</a
               >
             </li>
           </ul>
