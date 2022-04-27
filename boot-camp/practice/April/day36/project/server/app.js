@@ -7,6 +7,7 @@ const rfs = require('rotating-file-stream');
 const path = require('path');
 const cors = require('cors');
 const multer = require('multer');
+const xlsx = require('xlsx');
 
 require('dotenv').config({ path: `mysql/.env.${app.get('env')}` });
 const mysql = require('./mysql');
@@ -101,6 +102,15 @@ app.use('/api/product', productRoute);
 const supplierRoute = require('./routes/supplier');
 app.use('/api/supplier', supplierRoute);
 
+const customerRoute = require('./routes/customer');
+app.use('/api/customer', customerRoute);
+
+const shipperRoute = require('./routes/shipper');
+app.use('/api/shipper', shipperRoute);
+
+const orderRoute = require('./routes/order');
+app.use('/api/order', orderRoute);
+
 // app.post("/login", (req, res) => {
 //   const { email, pw } = req.body.param;
 //   // 데이터베이스에 사용자가 있는지, 비밀번호는 맞는지 체크
@@ -157,6 +167,18 @@ app.post(
     };
 
     res.send(fileInfo);
+  }
+);
+
+app.post(
+  '/api/upload/excel',
+  fileUpload.single('attachment'),
+  async (req, res) => {
+    const workbook = xlsx.readFile(req.file.path);
+    const firstSheetName = workbook.SheetNames[0];
+    const firstSheet = workbook.Sheets[firstSheetName];
+    const firstSheetJson = xlsx.utils.sheet_to_json(firstSheet);
+    res.send(firstSheetJson);
   }
 );
 

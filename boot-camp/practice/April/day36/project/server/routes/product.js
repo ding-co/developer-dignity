@@ -57,4 +57,12 @@ router.get('/', async (req, res) => {
   res.send(productList);
 });
 
+router.get('/:product_id', async (req, res) => {
+  const productDetail = await mysql.query(
+    'productDetail',
+    req.params.product_id
+  );
+  res.send(productDetail[0]);
+});
+
 module.exports = router;

@@ -10,6 +10,7 @@ const pool = mysql.createPool({
   connectionLimit: process.env.MYSQL_LIMIT,
 });
 
+// 테이블 하나 대상
 /* 쿼리문을 실행하고 결과를 반환하는 함수 */
 const query = async (alias, values) => {
   return new Promise((resolve, reject) =>
@@ -25,6 +26,21 @@ const query = async (alias, values) => {
   );
 };
 
+// 동시에 여러 테이블 한번에 업데이트 처리 등..
+const getConnection = async () => {
+  return new Promise((resolve, reject) =>
+    pool.getConnection((err, conn) => {
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        resolve(conn);
+      }
+    })
+  );
+};
+
 module.exports = {
   query,
+  getConnection,
 };

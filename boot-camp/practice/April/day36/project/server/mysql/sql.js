@@ -16,4 +16,10 @@ module.exports = {
   supplierUpdate: `update product_supplier set ? where supplier_id=?`,
   productInsert: `insert into product set ?`,
   productList: `select t1.*, t2.category_name, t3.supplier_name from product t1, product_category t2, product_supplier t3 where t1.product_category_id = t2.product_category_id and t1.supplier_id = t3.supplier_id`,
+  productDetail: `select t1.*, t2.category_name, t3.supplier_name from product t1, product_category t2, product_supplier t3 where t1.product_id=? and t1.product_category_id=t2.product_category_id and t1.supplier_id=t3.supplier_id`,
+  customerList: `select * from customer`,
+  shipperList: `select * from product_shipper`,
+  orderInsert: `insert into product_order set ?`,
+  orderItemInsert: `insert into product_order_detail (order_id, product_id, order_qty) values ?`,
+  shipperMultipleInsert: `insert into product_shipper (shipper_name, phone, address, delivery_yn, active_yn) values ?`,
 };

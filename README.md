@@ -91,7 +91,7 @@
 
 > - [x] [22_04_26_Tue - Vue.js + Node.js 02](boot-camp/note/April/22_04_26_Tue.md)
 
-> - [ ] [22_04_27_Wed - Vue.js + Node.js 03](boot-camp/note/April/22_04_27_Wed.md)
+> - [x] [22_04_27_Wed - Vue.js + Node.js 03](boot-camp/note/April/22_04_27_Wed.md)
 
 ### _부트캠프 마무리_
 

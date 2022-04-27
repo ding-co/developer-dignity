@@ -49,6 +49,22 @@
                 >Product</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                :class="{ active: $route.path == '/order/create' }"
+                @click="goToMenu('/order/create')"
+                >Order</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                :class="{ active: $route.path == '/shipper' }"
+                @click="goToMenu('/shipper')"
+                >Shipper</a
+              >
+            </li>
           </ul>
           <!-- <div class="d-flex">
             <span v-if="userInfo.name" class="text-white">{{

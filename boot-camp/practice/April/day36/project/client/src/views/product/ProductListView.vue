@@ -48,7 +48,7 @@
               {{ product.category_name }} || {{ product.supplier_name }}
             </p>
 
-            <a class="btn btn-primary" @click="goToProduct(product.id)"
+            <a class="btn btn-primary" @click="goToProduct(product.product_id)"
               >Detail</a
             >
           </div>
@@ -94,7 +94,7 @@ export default {
       // 북마크나 상품 상세 정보 볼 때는 GET 권장 (보안상 크게 위배 안되는 컨텐츠)
       this.$router.push({
         path: '/product/detail',
-        query: { id, searchName: this.searchName }
+        query: { product_id: id, searchName: this.searchName }
       })
 
       // params => POST 방식
