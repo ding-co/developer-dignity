@@ -95,7 +95,7 @@
 
 ### _부트캠프 마무리_
 
-> - [ ] [22_04_28_Thu - 부트캠프 마무리](boot-camp/note/April/22_04_28_Thu.md)
+> - [x] [22_04_28_Thu - 부트캠프 마무리](boot-camp/note/April/22_04_28_Thu.md)
 
 </details>
 
