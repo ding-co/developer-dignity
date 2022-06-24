@@ -91,3 +91,6 @@
 ::1 - - [27/Apr/2022:10:36:37 +0000] "GET /static/images/undefined HTTP/1.1" 404 162 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
 ::1 - - [27/Apr/2022:12:04:55 +0000] "GET /api/shipper/category HTTP/1.1" 404 159 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
 ::1 - - [27/Apr/2022:12:04:55 +0000] "GET /api/shipper/category HTTP/1.1" 404 159 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36"
+::1 - - [06/May/2022:20:41:57 +0000] "GET /images/setting_check.png HTTP/1.1" 404 163 "http://localhost:3000/client/dashboard" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36"
+::1 - - [06/May/2022:20:42:00 +0000] "GET /client/dashboard HTTP/1.1" 404 155 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36"
+::1 - - [06/May/2022:20:42:01 +0000] "GET /client/dashboard HTTP/1.1" 404 155 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36"
